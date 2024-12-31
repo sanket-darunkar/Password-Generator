@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nerko+One&display=swap" rel="stylesheet">
+</head>
+<body class="flex min-h-screen items-center justify-center flex-col pass-bg">
+    <body class="flex min-h-screen items-center justify-center flex-col pass-bg">
+        <!-- Animated background -->
+        <div class="area">
+            <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    
+        <!-- Password generator container -->
+        <div class="container w-[90%] max-w-[450px] relative z-10">
+            
+
+            <h1 class="text-white opacity-[0.75] uppercase tracking-wider text-center text-3xl" style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.7);">
+                Password Generator
+              </h1>
+              
+        
+                <div class="display-container relative bg-violet-400 rounded-xl mt-4 mb-0 p-3 flex items-center ">
+        
+                    <input readonly 
+                    placeholder="Password" 
+                    class="display bg-transparent w-full pl-4 pr-12 text-yellow-200 font-bold text-lg placeholder:text-yellow-300 uppercase placeholder:tracking-widest"style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.7);" data-passwordDisplay>
+        
+                    <button data-copy 
+                    class="absolute right-4 text-white hover:text-yellow-300">
+                        <span data-copyMsg></span>
+                        <i class="fa-solid fa-copy"></i>
+                    </button>
+        
+                </div>
+        
+        
+                <div class="input-container bg-violet-400 rounded-xl w-full p-4 mt-4  ">
+        
+                    <!--password length section-->
+                    <div class="length-container flex justify-between items-center ">
+                        <p class="text-2xl"style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.7);">Password Length</p>
+                        <p class="text-2xl" data-lengthNumber>0</p>
+                    </div>
+                    
+                    <!--slider-->
+                    <input type="range" min="1" max="20" class="slider appearance-none w-full cursor-pointer bg-violet-400 rounded-xl mt-8 mb-6 h-3 " step="1" data-lengthSlider>
+        
+                    <!-- checkboxes-->
+                    <div class=" check flex items-center mt-4 mr-0 gap-x-4 gap-y-0 ">
+                        <input class="appearance-none w-[20px] h-[20px] border border-black rounded-md cursor-pointer relative checked:bg-blue-500 " type="checkbox" id="uppercase">
+                        <label class="text-xl"style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.7);"style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.7);" for="uppercase">Includes Uppercase letters</label>
+                    </div>
+        
+                    <div class=" check flex items-center mt-4 mr-0 gap-x-4 gap-y-0 ">
+                        <input class="appearance-none w-[20px] h-[20px] border border-black rounded-md cursor-pointer relative checked:bg-blue-500" type="checkbox" id="lowercase">
+                        <label  class="text-xl"style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.7);" for="lowercase">Includes Lowercase letters</label>
+                    </div>
+        
+                    <div class="check flex items-center mt-4 mr-0 gap-x-4 gap-y-0 ">
+                        <input class="appearance-none w-[20px] h-[20px] border border-black rounded-md cursor-pointer relative checked:bg-blue-500" type="checkbox" id="numbers">
+                        <label class="text-xl"style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.7);" for="numbers">Includes Numbers </label>
+                    </div>
+        
+                    <div class=" check flex items-center mt-4 mr-0 gap-x-4 gap-y-0 ">
+                        <input class="appearance-none w-[20px] h-[20px] border border-black rounded-md cursor-pointer relative checked:bg-blue-500" type="checkbox" id="symbols">
+                        <label class="text-xl"style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.7);" for="symbols">Includes Symbols </label>
+                    </div>
+        
+                    <!-- strength section-->
+                    <div class="strength-container flex justify-between items-center mt-7 mb-8  ">
+                        <p class="text-2xl"style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.7);">Strength</p>
+                        <div class="w-6 h-6 rounded-full shadow-md bg-gray-800" data-indicator style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 0, 0.8);"></div>
+                    </div>
+        
+                    <!-- generate password--> 
+                    <button class="generateButton bg-violet-600 text-yellow-300 cursor-pointer rounded-xl w-full p-3 text-center uppercase text-2xl tracking-wider transition-all duration-300 ease-in-out shadow-lg hover:bg-violet-700 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-violet-400"style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.7);">
+                        Generate Password
+                      </button style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.7);"> 
+                      
+                      
+        
+                </div>
+        
+        </div>
+    </body>
+    <script src="script.js"></script>
+</body>
+</html>

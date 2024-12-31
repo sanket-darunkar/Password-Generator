@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+    font-family: "Nerko One", serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.container {
+    min-height: 100%; /* Ensures the container fills the entire height of the viewport */
+}
+.pass-bg {
+    background-image: url('pass-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.check input:checked::before{
+    content: '✔️';
+    position: absolute;
+    font-size: 1.05rem;
+    font-weight: 600;
+    left: 50%; 
+    top: -3.5px;
+    transform: translateX(-50%) translateY(10%);
+    color: blue;
+     
+}
+.slider{
+    background-image: linear-gradient(rgb(117, 22, 241), rgb(41, 0, 189) );
+    background-color: aqua;
+}
+.slider::-webkit-slider-thumb{
+    position: relative;
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: yellow;
+    cursor: pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0px rgba(225, 229, 61, 0.50);
+    transition: all 100ms ease-in;
+}
+.slider:focus{
+    outline: 3px solid yellow;
+}
+.slider::-webkit-slider-thumb:hover{
+    outline: 2px solid yellow;
+    background-color: rgb(169, 4, 169);
+}
+
+
+/* chatgpt */
+/* Update the password generator background */
+.pass-bg {
+    background: linear-gradient(135deg, #4a069d, #46229b);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Bubble animation container */
+.area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* Below content */
+    pointer-events: none; /* Ensure interactivity is not blocked */
+}
+
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+    animation: animate 6s linear infinite;
+    bottom: -150px;
+    border-radius: 50%;
+    opacity: 0.8;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Use gradient colors for bubbles */
+.circles li:nth-child(1) {
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #ff9a9e, #fad0c4);
+    animation-delay: 0s;
+    animation-duration: 5s;
+}
+
+.circles li:nth-child(2) {
+    left: 25%;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #a18cd1, #fbc2eb);
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+
+.circles li:nth-child(3) {
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #fbc2eb, #a6c1ee);
+    animation-delay: 2s;
+    animation-duration: 6s;
+}
+
+.circles li:nth-child(4) {
+    left: 75%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #84fab0, #8fd3f4);
+    animation-delay: 0.5s;
+    animation-duration: 7s;
+}
+
+.circles li:nth-child(5) {
+    left: 90%;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ffecd2, #fcb69f);
+    animation-delay: 1.5s;
+    animation-duration: 6s;
+}
+
+.circles li:nth-child(6) {
+    left: 20%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #c471ed, #f64f59);
+    animation-delay: 0.8s;
+    animation-duration: 5s;
+}
+
+.circles li:nth-child(7) {
+    left: 40%;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #12c2e9, #c471ed, #f64f59);
+    animation-delay: 1.2s;
+    animation-duration: 5.5s;
+}
+
+.circles li:nth-child(8) {
+    left: 60%;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #00c6ff, #0072ff);
+    animation-delay: 0.6s;
+    animation-duration: 4s;
+}
+
+.circles li:nth-child(9) {
+    left: 80%;
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle, #667eea, #764ba2);
+    animation-delay: 0.9s;
+    animation-duration: 6.5s;
+}
+
+.circles li:nth-child(10) {
+    left: 15%;
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, #d4fc79, #96e6a1);
+    animation-delay: 1s;
+    animation-duration: 3s;
+}
+
+/* Updated animation */
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-400px) rotate(360deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px) rotate(720deg);
+        opacity: 0;
+    }
+}
